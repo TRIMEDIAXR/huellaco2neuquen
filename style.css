@@ -174,8 +174,9 @@ body {
 }
 
 .over {
-
-
+    object-fit:contain;
+    max-width: 70%;
+    height: auto;
     transition: all 1s;
 }
 

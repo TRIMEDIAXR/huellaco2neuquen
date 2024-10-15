@@ -336,7 +336,7 @@ function mostrarZona() {
 
 function idZona(event) {
     avanceBtn.disabled = false;
-    usuario.zona = event.target.id;
+    usuario.zona = event.id;
     avanzar();
 }
 
@@ -398,7 +398,7 @@ function mostrarVehiculo() {
 
 function idVehiculo(event) {
     avanceBtn.disabled = false;
-    const vehiculoElegido = event.target.id;
+    const vehiculoElegido = event.id;
     usuario.tipoVehiculo = vehiculoElegido;
     if (usuario.tipoVehiculo == "No tengo") {
         usuario.cantKilometros = "sin vehículo";
@@ -447,7 +447,7 @@ function mostrarKilometros() {
 
 function idKilometros(event) {
     avanceBtn.disabled = false;
-    const kilometros = event.target.id;
+    const kilometros = event.id;
     usuario.cantKilometros = kilometros;
 
     avanzar();
@@ -502,7 +502,7 @@ function mostrarTransporte() {
 
 function idTransporte(event) {
     avanceBtn.disabled = false;
-    const tPublico = event.target.id;
+    const tPublico = event.id;
     usuario.transporteP = tPublico;
 
     avanzar();
@@ -546,7 +546,7 @@ function mostrarVuelos() {
 
 function idVuelos(event) {
     avanceBtn.disabled = false;
-    const cantvuelos = event.target.id;
+    const cantvuelos = event.id;
     usuario.vuelos = cantvuelos;
 
     avanzar();
@@ -590,7 +590,7 @@ function mostrarBiciCamina() {
 
 function idBiciCamina(event) {
     avanceBtn.disabled = false;
-    const bici = event.target.id;
+    const bici = event.id;
     usuario.bicicamina = bici;
 
     avanzar();
@@ -636,7 +636,7 @@ function mostrarCarpooling() {
 
 function idCarpooling(event) {
     avanceBtn.disabled = false;
-    const carpooling = event.target.id;
+    const carpooling = event.id;
     usuario.compVehiculo = carpooling;
 
     avanzar();
@@ -684,7 +684,7 @@ function mostrarEficiencia() {
 function idEficiencia(event) {
     console.log("aca estoy");
     avanceBtn.disabled = false;
-    const efi = event.target.id;
+    const efi = event.id;
     usuario.eficiencia = efi;
     console.log(usuario);
     avanzar();
@@ -755,18 +755,18 @@ function mostrarEnergia() {
 }
 
 function guardarEnergia(event) {
-    switch (event.target.id) {
+    switch (event.id) {
         case "electrica":
-            usuario.electrica = event.target.checked;
+            usuario.electrica = event.checked;
             break;
         case "gasNatural":
-            usuario.gasNatural = event.target.checked;
+            usuario.gasNatural = event.checked;
             break;
         case "gasEnvasado":
-            usuario.gasEnvasado = event.target.checked;
+            usuario.gasEnvasado = event.checked;
             break;
         case "renovable":
-            usuario.renovable = event.target.checked;
+            usuario.renovable = event.checked;
             break;
         default:
             break;
@@ -829,7 +829,7 @@ function mostrarVivienda() {
 function idtamanio(event) {
     console.log("aca estoy");
     avanceBtn.disabled = false;
-    const vivienda = event.target.id;
+    const vivienda = event.id;
     usuario.sizeVivienda = vivienda;
     console.log(usuario);
     avanzar();
@@ -872,7 +872,7 @@ function mostrarPersonas() {
 function idPersonas(event) {
     console.log("aca estoy");
     avanceBtn.disabled = false;
-    const personas = event.target.id;
+    const personas = event.id;
     usuario.cantPersonas = personas;
     console.log(usuario);
     avanzar();
@@ -918,7 +918,7 @@ function mostrarElectros() {
 function idElectros(event) {
     console.log("aca estoy");
     avanceBtn.disabled = false;
-    const electros = event.target.id;
+    const electros = event.id;
     usuario.electros = electros;
     console.log(usuario);
     avanzar();
@@ -962,7 +962,7 @@ function mostrarReciclar() {
 function idReciclaje(event) {
     console.log("aca estoy");
     avanceBtn.disabled = false;
-    const reci = event.target.id;
+    const reci = event.id;
     usuario.recicla = reci;
     console.log(usuario);
     avanzar();
@@ -1009,7 +1009,7 @@ function mostrarDispositivos() {
 function idDisposi(event) {
     console.log("aca estoy");
     avanceBtn.disabled = false;
-    const dispo = event.target.id;
+    const dispo = event.id;
     usuario.dispositivos = dispo;
     console.log(usuario);
     avanzar();
@@ -1058,7 +1058,7 @@ function mostrarRenovable() {
 function idRenovable(event) {
     console.log("aca estoy");
     avanceBtn.disabled = false;
-    const reno = event.target.id;
+    const reno = event.id;
     usuario.renovables = reno;
     console.log(usuario);
     avanzar();
@@ -1110,7 +1110,7 @@ function mostrarAgua() {
 function idAgua(event) {
     console.log("aca estoy");
     avanceBtn.disabled = false;
-    const agua = event.target.id;
+    const agua = event.id;
     usuario.agua = agua;
     console.log(usuario);
     avanzar();
@@ -1159,7 +1159,7 @@ function mostrarLocales() {
 function idLocales(event) {
     console.log("aca estoy");
     avanceBtn.disabled = false;
-    const local = event.target.id;
+    const local = event.id;
     usuario.locales = local;
     console.log(usuario);
     avanzar();

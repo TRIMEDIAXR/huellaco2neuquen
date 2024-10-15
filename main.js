@@ -650,7 +650,6 @@ function mostrarEficiencia() {
     const preguntas = (document.getElementById("preguntas").innerHTML =
         contadorPreguntas + " / 19");
     if (usuario.eficiencia === undefined) {
-        console.log("entró");
         avanceBtn.disabled = true;
     } else {
         avanceBtn.disabled = false;
@@ -682,11 +681,9 @@ function mostrarEficiencia() {
         "none");
 }
 function idEficiencia(event) {
-    console.log("aca estoy");
     avanceBtn.disabled = false;
     const efi = event.id;
     usuario.eficiencia = efi;
-    console.log(usuario);
     avanzar();
 }
 
@@ -707,7 +704,6 @@ function mostrarEnergia() {
         usuario.gasNatural == undefined &&
         usuario.electrica == undefined
     ) {
-        console.log("entró toda");
         avanceBtn.disabled = true;
     } else {
         avanceBtn.disabled = false;
@@ -786,7 +782,6 @@ function guardarEnergia(event) {
         avanceBtn.disabled = true;
     }
 
-    console.log(usuario);
 }
 
 function mostrarVivienda() {
@@ -797,7 +792,6 @@ function mostrarVivienda() {
     const preguntas = (document.getElementById("preguntas").innerHTML =
         contadorPreguntas + " / 19");
     if (usuario.sizeVivienda === undefined) {
-        console.log("entró");
         avanceBtn.disabled = true;
     } else {
         avanceBtn.disabled = false;
@@ -827,11 +821,9 @@ function mostrarVivienda() {
 }
 
 function idtamanio(event) {
-    console.log("aca estoy");
     avanceBtn.disabled = false;
     const vivienda = event.id;
     usuario.sizeVivienda = vivienda;
-    console.log(usuario);
     avanzar();
 }
 
@@ -843,7 +835,6 @@ function mostrarPersonas() {
     const preguntas = (document.getElementById("preguntas").innerHTML =
         contadorPreguntas + " / 19");
     if (usuario.cantPersonas === undefined) {
-        console.log("entró");
         avanceBtn.disabled = true;
     } else {
         avanceBtn.disabled = false;
@@ -870,11 +861,9 @@ function mostrarPersonas() {
 }
 
 function idPersonas(event) {
-    console.log("aca estoy");
     avanceBtn.disabled = false;
     const personas = event.id;
     usuario.cantPersonas = personas;
-    console.log(usuario);
     avanzar();
 }
 
@@ -886,7 +875,6 @@ function mostrarElectros() {
     const preguntas = (document.getElementById("preguntas").innerHTML =
         contadorPreguntas + " / 19");
     if (usuario.electros === undefined) {
-        console.log("entró");
         avanceBtn.disabled = true;
     } else {
         avanceBtn.disabled = false;
@@ -916,11 +904,9 @@ function mostrarElectros() {
 }
 
 function idElectros(event) {
-    console.log("aca estoy");
     avanceBtn.disabled = false;
     const electros = event.id;
     usuario.electros = electros;
-    console.log(usuario);
     avanzar();
 }
 
@@ -932,7 +918,6 @@ function mostrarReciclar() {
     const preguntas = (document.getElementById("preguntas").innerHTML =
         contadorPreguntas + " / 19");
     if (usuario.recicla === undefined) {
-        console.log("entró");
         avanceBtn.disabled = true;
     } else {
         avanceBtn.disabled = false;
@@ -960,11 +945,9 @@ function mostrarReciclar() {
 }
 
 function idReciclaje(event) {
-    console.log("aca estoy");
     avanceBtn.disabled = false;
     const reci = event.id;
     usuario.recicla = reci;
-    console.log(usuario);
     avanzar();
 }
 
@@ -976,7 +959,6 @@ function mostrarDispositivos() {
     const preguntas = (document.getElementById("preguntas").innerHTML =
         contadorPreguntas + " / 19");
     if (usuario.dispositivos === undefined) {
-        console.log("entró");
         avanceBtn.disabled = true;
     } else {
         avanceBtn.disabled = false;
@@ -1007,11 +989,9 @@ function mostrarDispositivos() {
 }
 
 function idDisposi(event) {
-    console.log("aca estoy");
     avanceBtn.disabled = false;
     const dispo = event.id;
     usuario.dispositivos = dispo;
-    console.log(usuario);
     avanzar();
 }
 
@@ -1023,7 +1003,6 @@ function mostrarRenovable() {
     const preguntas = (document.getElementById("preguntas").innerHTML =
         contadorPreguntas + " / 19");
     if (usuario.renovables === undefined) {
-        console.log("entró");
         avanceBtn.disabled = true;
     } else {
         avanceBtn.disabled = false;
@@ -1056,11 +1035,9 @@ function mostrarRenovable() {
 }
 
 function idRenovable(event) {
-    console.log("aca estoy");
     avanceBtn.disabled = false;
     const reno = event.id;
     usuario.renovables = reno;
-    console.log(usuario);
     avanzar();
 }
 
@@ -1072,7 +1049,6 @@ function mostrarAgua() {
     const preguntas = (document.getElementById("preguntas").innerHTML =
         contadorPreguntas + " / 19");
     if (usuario.agua === undefined) {
-        console.log("entró");
         avanceBtn.disabled = true;
     } else {
         avanceBtn.disabled = false;
@@ -1108,11 +1084,9 @@ function mostrarAgua() {
 }
 
 function idAgua(event) {
-    console.log("aca estoy");
     avanceBtn.disabled = false;
     const agua = event.id;
     usuario.agua = agua;
-    console.log(usuario);
     avanzar();
 }
 
@@ -1129,7 +1103,6 @@ function mostrarLocales() {
     const flechaAvance = (document.getElementById("imgAvance").style.opacity =
         100);
     if (usuario.locales === undefined) {
-        console.log("entró");
         avanceBtn.disabled = true;
     } else {
         avanceBtn.disabled = false;
@@ -1157,11 +1130,9 @@ function mostrarLocales() {
 }
 
 function idLocales(event) {
-    console.log("aca estoy");
     avanceBtn.disabled = false;
     const local = event.id;
     usuario.locales = local;
-    console.log(usuario);
     avanzar();
 }
 
@@ -1242,7 +1213,6 @@ function calcularHuella() {
         default:
             break;
     }
-    console.log(c_tipoVehiculo);
 
     var c_cantKilometros;
     switch (usuario.cantKilometros) {
@@ -1265,7 +1235,6 @@ function calcularHuella() {
             c_cantKilometros = 0;
             break;
     }
-    console.log(c_cantKilometros);
 
     var c_transporteP;
     switch (usuario.transporteP) {
@@ -1284,7 +1253,6 @@ function calcularHuella() {
         default:
             break;
     }
-    console.log(c_transporteP);
 
     var c_vuelos;
     switch (usuario.vuelos) {
@@ -1301,7 +1269,6 @@ function calcularHuella() {
         default:
             break;
     }
-    console.log(c_vuelos);
 
     var c_bicicamina;
     switch (usuario.bicicamina) {
@@ -1321,7 +1288,6 @@ function calcularHuella() {
         default:
             break;
     }
-    console.log(c_bicicamina);
 
     var c_compVehiculo;
     switch (usuario.compVehiculo) {
@@ -1337,7 +1303,6 @@ function calcularHuella() {
         default:
             break;
     }
-    console.log(c_compVehiculo);
 
     var c_eficiencia;
     switch (usuario.eficiencia) {
@@ -1357,7 +1322,6 @@ function calcularHuella() {
             c_eficiencia = 1;
             break;
     }
-    console.log(c_eficiencia);
 
     var c_electrica;
     if (usuario.electrica == true) {
@@ -1365,7 +1329,6 @@ function calcularHuella() {
     } else {
         c_electrica = 1.0;
     }
-    console.log(c_electrica);
 
     var c_gasNatural;
     if (usuario.gasNatural == true) {
@@ -1373,7 +1336,6 @@ function calcularHuella() {
     } else {
         c_gasNatural = 0;
     }
-    console.log(c_gasNatural);
 
     var c_gasEnvasado;
     if (usuario.gasEnvasado == true) {
@@ -1382,7 +1344,6 @@ function calcularHuella() {
         usuario.gasEnvasado = false;
         c_gasEnvasado = 0;
     }
-    console.log(c_gasEnvasado);
 
     var c_renovable;
     if (usuario.renovable == true) {
@@ -1391,7 +1352,6 @@ function calcularHuella() {
         usuario.renovable = false;
         c_renovable = 1;
     }
-    console.log(c_renovable);
 
     var c_sizeVivienda;
     switch (usuario.sizeVivienda) {
@@ -1407,7 +1367,6 @@ function calcularHuella() {
         default:
             break;
     }
-    console.log(c_sizeVivienda);
 
     var c_cantPersonas;
     switch (usuario.cantPersonas) {
@@ -1423,7 +1382,6 @@ function calcularHuella() {
         default:
             break;
     }
-    console.log(c_cantPersonas);
 
     var c_electros;
     switch (usuario.electros) {
@@ -1439,7 +1397,6 @@ function calcularHuella() {
         default:
             break;
     }
-    console.log(c_electros);
 
     var c_recicla;
     switch (usuario.recicla) {
@@ -1455,7 +1412,6 @@ function calcularHuella() {
         default:
             break;
     }
-    console.log(c_recicla);
 
     var c_dispositivos;
     switch (usuario.dispositivos) {
@@ -1474,7 +1430,6 @@ function calcularHuella() {
         default:
             break;
     }
-    console.log(c_dispositivos);
 
     var c_renovables;
     switch (usuario.renovables) {
@@ -1493,7 +1448,6 @@ function calcularHuella() {
         default:
             break;
     }
-    console.log(c_renovables);
 
     var c_agua;
     switch (usuario.agua) {
@@ -1512,7 +1466,6 @@ function calcularHuella() {
         default:
             break;
     }
-    console.log(c_agua);
 
     var c_locales;
     switch (usuario.locales) {
@@ -1531,7 +1484,6 @@ function calcularHuella() {
         default:
             break;
     }
-    console.log(c_locales);
 
     //CALCULAMOS CO2 DE TRANSPORTE
     co2Transporte = parseInt(
@@ -1549,7 +1501,6 @@ function calcularHuella() {
         co2Transporte = 0;
     }
     usuario.co2Transporte = co2Transporte;
-    console.log(co2Transporte);
     //CALCULAMOS CO2 DE HOGAR
     co2Hogar =
         parseInt(
@@ -1570,11 +1521,9 @@ function calcularHuella() {
     usuario.co2Hogar = co2Hogar;
     const verco2hogar = (document.getElementById("co2HogarFinal").innerHTML =
         co2Hogar);
-    console.log(co2Hogar);
     //CALCULAMOS CO2 DE ESTILO DE VIDA
     co2Vida = parseInt(c_agua + c_locales);
     usuario.co2Vida = co2Vida;
-    console.log(co2Vida);
     const verco2Vida = (document.getElementById("co2VidaFinal").innerHTML =
         co2Vida);
     //CALCULAMOS RESULTADO FINAL
@@ -1634,7 +1583,6 @@ function calcularHuella() {
         const linkRojo = (document.getElementById("btnLinks").href =
             "https://ambiente.neuquen.gov.ar/guardianes-rojos/");
     }
-    console.log(usuario);
 }
 
 function mostrarResultados() {
@@ -1643,12 +1591,10 @@ function mostrarResultados() {
     if (mailguardar.includes("@")) {
         usuario.mail = mailguardar;
     }
-    console.log(usuario.mail);
 
     let fechaActual = new Date();
     let fechaFormateada = `${fechaActual.getFullYear()}${fechaActual.getMonth() + 1}${fechaActual.getDate()}`;
     usuario.fecha = fechaFormateada;
-    console.log(usuario.fecha);
 
     calcularHuella();
     const preguntas = (document.getElementById("listaPreguntas").style.display =
@@ -1686,7 +1632,6 @@ function avanzar() {
             //GUARDO EL NOMBRE INGRESADO AL TOCAR AVANZAR
             const idname = document.getElementById("usuarioNombre").value;
             usuario.nombre = idname;
-            console.log(usuario);
             mostrarEdad();
             break;
         case 3:
@@ -1694,7 +1639,6 @@ function avanzar() {
             //GUARDO LA EDAD AL TOCAR AVANZAR
             const idEdad = document.getElementById("usuarioEdad").value;
             usuario.edad = idEdad * 1;
-            console.log(usuario);
             mostrarZona();
             break;
         case 4:

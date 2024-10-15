@@ -953,7 +953,7 @@ function mostrarReciclar() {
     const electros = (document.getElementById("electrosConsumo").style.display =
         "none");
     const fondorecicla = (document.body.style.backgroundImage =
-        "url(images/reciclaje.jpg)");
+        "url(images/compras.jpg)");
     const reci = (document.getElementById("reciclaje").style.display = "flex");
     const dispo = (document.getElementById("conDispositivos").style.display =
         "none");

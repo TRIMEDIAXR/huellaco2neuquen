@@ -1903,12 +1903,14 @@ function retroceder() {
 
 // ANIMACION HUELLITA
 var im = document.getElementById("imghuellita");
+var im2 = document.getElementById("imghuellita2");
 
 var images = ["images/imagen1.png", "images/imagen2.png", "images/imagen3.png"];
 var index = 0;
 
 function changeImage() {
     im.setAttribute("src", images[index]);
+    im2.setAttribute("src", images[index]);
     index++;
     if (index >= images.length) {
         index = 0;

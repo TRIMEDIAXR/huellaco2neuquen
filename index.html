@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Huella de Carbono Neuquén</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+</head>
+<body>
+    <header id="superior" class="row d-flex justify-content-center">
+        <div class="fondo"></div>
+        <!-- MOSTRAR LOGIN Y LOGO -->
+        <div class="col-lg-3 col-2"></div>
+        <div class="col-lg-4 col-7 d-flex justify-content-center align-content-start">
+          <a href="index.html" class="d-flex align-items-start"
+            ><img src="images/light.png" alt="logoHuella" class="logs img-fluid mt-2" /></a>
+        </div>
+        <div class="col-lg-3 col-2 d-flex justify-content-end align-content-start">
+        </div>
+      </header>
+      <section id="centro">
+        <!-- MOSTRAR INICIO -->
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <div class="row justify-content-center h-100" id="main">
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <div class="col-sm-6 col-10" onclick="mostrarPreguntas()">
+            <div
+              id="carouselExampleCaptions"
+              class="carousel slide h-100 carousel-fade"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <div class="h-100 d-flex justify-content-center">
+                    <img src="images/1.png" alt="loopLogo" class=" over" />
+                  </div>
+                  <div class="carousel-caption d-md-block">
+                    <h5></h5>
+                    <p></p>
+                  </div>
+                </div>
+                <div class="carousel-item h-100">
+                  <div class="h-100 d-flex justify-content-center">
+                    <img src="images/2.png" alt="loopLogo" class=" over" />
+                  </div>
+                  <div class="carousel-caption d-md-block">
+                    <h5></h5>
+                    <p></p>
+                  </div>
+                </div>
+                <div class="carousel-item h-100">
+                  <div class="h-100 d-flex justify-content-center">
+                    <img src="images/3.png" alt="loopLogo" class=" over" />
+                  </div>
+                  <div class="carousel-caption d-md-block mt-1">
+                    <h5></h5>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- MOSTRAR HUELLITA CONSULTAS -->
+        <div class="row justify-content-center h-100" id="listaPreguntas">
+          <div class="col-12">
+            <audio src="sounds/bienvenida.mp3" id="saludo"></audio>
+            <div class="row pe-1 ps-1 justify-content-center h-100">
+              <div class="col-12">
+                <div class="row justify-content-center">
+                  <button
+                    id="btnInfo"
+                    type="button"
+                    class="btn d-flex justify-content-center"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    <img
+                      src="images/info.png"
+                      alt="info"
+                      class="logs img img-fluid"
+                    />
+                  </button>
+                  <div class="huellita"  id="huellitaAnima">
+                    <img
+                      src="images/imagen1.png"
+                      alt="loopLogo"
+                      class="img-fluid"
+                      id="imghuellita"
+                    />
+                    
+                  </div>
+                  <!-- MOSTRAR HUELLITA CONSULTAS -->
+                  <div class="vineta">
+                    <div class=" text-white text-center">
+                      <span id="txtAnimado" class=""></span>
+                    </div>
+                  </div>
+                  <!-- MOSTRAR MODAL MAS INFO Y SECCIONES -->
+                  <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-body" id="infoExtra">
+                          Bienvenidos a nuestra aplicación de cálculo de huella de
+                          carbono. Esta herramienta está diseñada para ayudarte a
+                          entender cómo tus actividades diarias impactan en el medio
+                          ambiente, específicamente en términos de emisiones de gases
+                          de efecto invernadero. Al responder las siguientes
+                          preguntas, podrás identificar áreas clave donde podrías
+                          hacer cambios significativos para reducir tu huella de
+                          carbono y contribuir a la protección del planeta. Cada
+                          sección abordará diferentes aspectos de tu vida, desde el
+                          transporte hasta tus hábitos en el hogar y estilo de vida.
+                          ¡Empecemos!
+                        </div>
+                        <a
+                          href="https://ambiente.neuquen.gov.ar/"
+                          class="btn btn-outline-light"
+                          target="_blank"
+                          >Conocé Más</a
+                        >
+                        <button
+                          type="button"
+                          class="btn btn-outline-light"
+                          data-bs-dismiss="modal">Continuar</button
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="modal fade"
+                    id="transporteModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-body" id="infoExtra">
+                          ¿Sabías que el transporte es responsable de casi un cuarto
+                          de las emisiones globales de CO2 relacionadas con la
+                          energía? Reflexiona sobre tus hábitos de transporte y
+                          descubre opciones más sostenibles que puedan reducir tu
+                          impacto, como el uso de transporte público, bicicletas, o
+                          vehículos eléctricos.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="modal fade"
+                    id="hogarModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-body" id="infoExtra">
+                          Tu hogar es tu refugio, pero también un centro de consumo
+                          energético. Examinar cómo usas la energía y gestionas los
+                          residuos puede revelar maneras significativas de disminuir
+                          tus emisiones. Mejorar el aislamiento puede reducir el uso
+                          de calefacción y refrigeración hasta en un 30%. Puedes optar
+                          por energías renovables y optimizar el uso de
+                          electrodomésticos eficientes energéticamente para
+                          transformar tu espacio en un hogar más verde.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="modal fade"
+                    id="vidaModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-body" id="infoExtra">
+                          Cada producto que compras o consumes lleva una historia de
+                          carbono.Desde la ropa hasta los alimentos, tus elecciones de
+                          consumo tienen efectos en el ambiente. Puedes optar por
+                          productos locales y de temporada para reducir las emisiones
+                          relacionadas con el transporte en hasta un 10%. También
+                          puedes reducir el desperdicio de alimentos y recursos para
+                          minimizar tu impacto ambiental y promover un estilo de vida
+                          más sostenible.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-12" id="listaPreguntas">
+                <!-- GRUPO DE PREGUNTAS PERFIL -->
+                <div class="row pe-1 ps-1 justify-content-center" id="divPerfil">
+                  <!-- NOMBRE  -->
+                  <div id="inputNombre" class="row justify-content-center">
+                    <div class="col-11 col-lg-6 respuesta text-white text-center">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="tu nombre aquí"
+                        aria-label="Username"
+                        maxlength="30"
+                        required
+                        id="usuarioNombre"
+                      />
+                    </div>
+                  </div>
+                  <!-- EDAD  -->
+                  <div id="inputEdad" class="row justify-content-center">
+                    <div class="col-11 col-lg-6 respuesta text-white text-center">
+                      <input
+                        type="number"
+                        id="usuarioEdad"
+                        class="form-control"
+                        min="5"
+                        max="99"
+                        placeholder="tu edad aquí"
+                      />
+                    </div>
+                  </div>
+                  <!-- ZONA  -->
+                  <div id="inputZona" class="row justify-content-center">
+                    <!-- TRANSICION VENTANA EMERGENTE MAPA DE ZONAS NEUQUEN  -->
+                    <div
+                      class="modal fade"
+                      id="emergenteMapa"
+                      tabindex="-1"
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog">
+                        <div class="modal-content alto">
+                          <div class="modal-body align-content-start">
+                            ¿En qué región de la Provincia de Neuquén vivís? <br />
+                            Ten en cuenta esto para elegir la opción correcta en la
+                            siguiente pregunta.
+                            <img
+                              src="images/mapa.png"
+                              alt="mapa"
+                              class="img-fluid"
+                            />
+                          </div>
+      
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            data-bs-dismiss="modal">Continuar</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            value="VACA MUERTA"
+                            onclick="idZona()"
+                            id="VACA MUERTA">VACA MUERTA</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            value="REGIÓN SUR"
+                            onclick="idZona()"
+                            id="REGIÓN SUR">REGIÓN SUR</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            value="COMARCA"
+                            onclick="idZona()"
+                            id="COMARCA">COMARCA</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            value="NORTE"
+                            onclick="idZona()"
+                            id="NORTE">NORTE</button
+                          >
+                        </div>
+                        <div class="col d-flex flex-column">
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            value="CONFLUENCIA"
+                            onclick="idZona()"
+                            id="CONFLUENCIA">CONFLUENCIA</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            value="LIMAY CENTRO"
+                            onclick="idZona()"
+                            id="LIMAY CENTRO">LIMAY CENTRO</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            value="CENTRO OESTE"
+                            onclick="idZona()"
+                            id="CENTRO OESTE">CENTRO OESTE</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- GRUPO DE PREGUNTAS DE TRANSPORTE -->
+                <div class="row pe-1 ps-1 justify-content-center" id="divTransporte">
+                  <!-- TRANSICION VENTANA EMERGENTE INFO TRANSPORTE  -->
+                  <div
+                    class="modal fade"
+                    id="emergenteTransporte"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          ¿Sabías que el transporte es responsable de casi un cuarto
+                          de las emisiones globales de CO2 relacionadas con la
+                          energía? Reflexiona sobre tus hábitos de transporte y
+                          descubre opciones más sostenibles que puedan reducir tu
+                          impacto, como el uso de transporte público, bicicletas, o
+                          vehículos eléctricos.
+                        </div>
+                        <button
+                          type="button"
+                          class="btn btn-outline-light"
+                          data-bs-dismiss="modal">Continuar</button
+                        >
+                        <audio src="sounds/transporte.mp3" id="audioTransporte"></audio>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- TIPO DE VEHICULO  -->
+                  <div id="inputVehiculo" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idVehiculo()"
+                            id="Gasolina">Nafta</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idVehiculo()"
+                            id="Diésel">Diésel</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idVehiculo()"
+                            id="Híbrido">Híbrido</button
+                          >
+                        </div>
+                        <div class="col d-flex flex-column">
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idVehiculo()"
+                            id="Eléctrico">Eléctrico</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idVehiculo()"
+                            id="No tengo">No tengo vehículo</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- CANTIDAD DE KILOMETROS  -->
+                  <div id="cantKilometros" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <!-- CANTIDAD DE KILOMETROS  cantidad de kilometros semanales x 52 semanas-->
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idKilometros()"
+                            id="Menos de 50km">Menos de 50km</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idKilometros()"
+                            id="50 a 150km">50 a 150km</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idKilometros()"
+                            id="Más de 150km">Más de 150km</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- TRANSPORTE PUBLICO  -->
+                  <div id="tPublico" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <!-- TRANSPORTE PUBLICO  :valores de consumo anual segun cantidad de dias ej: 192kgco2/año-->
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idTransporte()"
+                            id="No utilizo">No utilizo</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idTransporte()"
+                            id="1 a 2 días">1 a 2 días</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idTransporte()"
+                            id="3 a 5 días">3 a 5 días</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idTransporte()"
+                            id="Más de 5 días">Más de 5 días</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- CANTIDAD DE VUELOS  -->
+                  <div id="vuelos" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <!-- TRANSPORTE PUBLICO  :250 kgco2 anual por vuelo ida y vuelta-->
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idVuelos()"
+                            id="Ninguno">Ninguno</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idVuelos()"
+                            id="1 a 3 vuelos">1 a 3 vuelos</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idVuelos()"
+                            id="Más de 3 vuelos">Más de 3 vuelos</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- BICI Y CAMINATAS  -->
+                  <div id="bicicamina" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <!-- BICI Y CAMINATAS X día calculamos 15km -->
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idBiciCamina()"
+                            id="No">No</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idBiciCamina()"
+                            id="1 a 2 días">1 a 2 días</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idBiciCamina()"
+                            id="3 a 5 días">3 a 5 días</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idBiciCamina()"
+                            id="Todos los días">Todos los días</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- CARPOOLING  -->
+                  <div id="carpooling" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idCarpooling()"
+                            id="No">No</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idCarpooling()"
+                            id="Sí, 1 a 2 días">Sí, 1 a 2 días</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idCarpooling()"
+                            id="Sí, 3 o más días">Sí, 3 o más días</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- EFICIENCIA DE AUTOMOVIL  -->
+                  <div id="efiEnergia" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idEficiencia()"
+                            id="Menos de 10km/litro">Menos de 10km/litro</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idEficiencia()"
+                            id="10 a 15 km/litro">10 a 15km/litro</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idEficiencia()"
+                            id="Más de 15 km/litro">Más de 15km/litro</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- GRUPO DE PREGUNTAS DEL HOGAR -->
+                <div class="row pe-1 ps-1 justify-content-center" id="divHogar">
+                  <!-- TRANSICION VENTANA EMERGENTE INFO HOGAR  -->
+                  <div
+                    class="modal fade"
+                    id="emergenteHogar"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          Tu hogar es tu refugio, pero también un centro de consumo
+                          energético. Examinar cómo usas la energía y gestionas los
+                          residuos puede revelar maneras significativas de disminuir
+                          tus emisiones. Mejorar el aislamiento puede reducir el uso
+                          de calefacción y refrigeración hasta en un 30%, mientras que
+                          optar por energías renovables y optimizar el uso de
+                          electrodomésticos eficientes energéticamente transforma tu
+                          espacio en un hogar más verde.
+                        </div>
+                        <button
+                          type="button"
+                          class="btn btn-outline-light"
+                          data-bs-dismiss="modal">Continuar</button
+                        >
+                        <audio src="sounds/hogar.mp3" id="audioHogar"></audio>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- HOGAR-SUMINISTRO ELECTRICO  -->
+                  <div id="energia" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="electrica"
+                              value="1"
+                              onclick="guardarEnergia()"
+                            />
+                            <label class="form-check-label" for="electrica"
+                              >Eléctrica</label
+                            >
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="gasNatural"
+                              value="2"
+                              onclick="guardarEnergia()"
+                            />
+                            <label class="form-check-label" for="gasNatural"
+                              >Gas</label
+                            >
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="gasEnvasado"
+                              value="3"
+                              onclick="guardarEnergia()"
+                            />
+                            <label class="form-check-label" for="gasEnvasado"
+                              >Leña</label
+                            >
+                          </div>
+                          <div class="form-check" style="display: none;">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="renovable"
+                              value="4"
+                              onclick="guardarEnergia()"
+                            />
+                            <label class="form-check-label" for="renovable"
+                              >Energías Renovables</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- TAMAÑO DE VIVIENDA -->
+                  <div id="sizeVivienda" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idtamanio()"
+                            id="Menos de 50 m2">Menos de 50 m²</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idtamanio()"
+                            id="50 a 100 m2">50 a 100m²</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idtamanio()"
+                            id="Más de 100 m2">Más de 100m²</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--CANTIDAD DE PERSONAS  -->
+                  <div id="cantPersonas" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idPersonas()"
+                            id="1 a 2 personas">1 a 2 personas</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idPersonas()"
+                            id="3 a 4 personas">3 a 4 personas</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idPersonas()"
+                            id="Más de 4 personas">Más de 4 personas</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--CONSUMO DE ELECTRODOMESTICOS  -->
+                  <div id="electrosConsumo" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idElectros()"
+                            id="Uso limitado">Uso limitado de electros grandes</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idElectros()"
+                            id="Uso moderado">Uso moderado</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idElectros()"
+                            id="Uso frecuente"
+                            >Uso frecuente de múltiples electros</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--RECICLAJE -->
+                  <div id="reciclaje" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idReciclaje()"
+                            id="No reciclo">No reciclo</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idReciclaje()"
+                            id="Reciclo algunos materiales"
+                            >Reciclo algunos materiales</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idReciclaje()"
+                            id="Reciclo la mayoría"
+                            >Reciclo la mayoría de materiales</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--CONSUMO DE DISPOSITIVOS PERMANENTES-->
+                  <div id="conDispositivos" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idDisposi()"
+                            id="Ninguno">Ninguno</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idDisposi()"
+                            id="1 a 5 dispositivos">1 a 5 dispositivos</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idDisposi()"
+                            id="6 a 10 dispositivos">6 a 10 dispositivos</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idDisposi()"
+                            id="Más de 10 dispositivos">Más de 10 dispositivos</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--TIPO DE ENERGIAS RENOVABLES Y USO-->
+                  <div id="tipoRenovables" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idRenovable()"
+                            id="Si, cubro completo"
+                            >Sí,y cubro el consumo total de mi hogar</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idRenovable()"
+                            id="Si, cubro parcial"
+                            >Sí, pero complemento con energía convencional</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idRenovable()"
+                            id="No, en futuro"
+                            >No, pero planeo instalar en el futuro</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idRenovable()"
+                            id="No, no planeo">No tengo y no planeo instalar</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- GRUPO DE PREGUNTAS DE ESTILO DE VIDA -->
+                <div class="row pe-1 ps-1 justify-content-center" id="divVida">
+                  <!-- TRANSICION VENTANA EMERGENTE INFO ESTILO DE VIDA  -->
+                  <div
+                    class="modal fade"
+                    id="emergenteVida"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          Cada producto que compras o consumes lleva una historia de
+                          carbono. Desde la ropa hasta los alimentos, tus elecciones
+                          de consumo tienen efectos en el ambiente. Optar por
+                          productos locales y de temporada puede reducir las emisiones
+                          relacionadas con el transporte en hasta un 10%, mientras que
+                          reducir el desperdicio de alimentos y recursos minimiza tu
+                          impacto ambiental y promueve un estilo de vida más
+                          sostenible.
+                        </div>
+                        <button
+                          type="button"
+                          class="btn btn-outline-light"
+                          data-bs-dismiss="modal">Continuar</button
+                        >
+                        <audio src="sounds/vida.mp3" id="audioVida"></audio>
+                      </div>
+                    </div>
+                  </div>
+                  <!--CONSUMO DE AGUA DIARIO-->
+                  <div id="aguaConsumo" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idAgua()"
+                            id="Menos de 50">Menos de 50 litros</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idAgua()"
+                            id="51 a 100">51 a 100 litros</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idAgua()"
+                            id="101 a 150">101 a 150 litros</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idAgua()"
+                            id="Más de 150">Más de 150 litros</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--CONSUMO DE PRODUCTOS LOCALES-->
+                  <div id="locales" class="row justify-content-center">
+                    <div class="respuesta2 text-white text-center">
+                      <div class="row justify-content-center">
+                        <div class="col d-flex flex-column">
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idLocales()"
+                            id="Siempre locales/temporada"
+                            >Siempre productos locales</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idLocales()"
+                            id="A menudo locales/temporada"
+                            >A menudo productos locales</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idLocales()"
+                            id="Regularmente importados"
+                            >Regularmente productos importados</button
+                          >
+                          <button
+                            type="button"
+                            class="btn btn-outline-light"
+                            onclick="idLocales()"
+                            id="Principalmente importados"
+                            >Principalmente productos importados</button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- CALCULAR RESULTADO FINAL -->
+                <div class="row pe-1 ps-1 justify-content-center" id="divFinal">
+                  <!--PANTALLA CALCULAR-->
+                  <div id="calcular" class="row justify-content-center">
+                    <form class="respuesta3 text-white text-center">
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="tu mail aquí"
+                        aria-label="Username"
+                        maxlength="50"
+                        id="usuarioMail"
+                        autocomplete="email"
+                        pattern="[^@]*@[^@]*"
+                        disabled
+                      />
+                      <div class="">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="mail"
+                          value="mail"
+                          onclick="opcionMail()"
+                        />
+                        <label class="form-check-label" for="mail"
+                          >No deseo info al mail</label
+                        >
+                      </div>
+      
+                      <button
+                        type="button"
+                        class="btn btn-outline-light mt-5"
+                        onclick="mostrarResultados()"
+                        disabled
+                        id="btnCalcular">Calcular Resultado</button
+                      >
+                    </form>
+                  </div>
+                </div>
+              </div>
+      
+              <!-- MOSTRAR BOTONES DE AVANCE -->
+              <div
+                id="botonesNav"
+                class="row align-items-center justify justify-content-center"
+              >
+                <div class="col-2 d-flex justify-content-center pe-0">
+                  <button
+                    type="button"
+                    alt="atr"
+                    class="btn btn-outline-primary"
+                    onclick="retroceder()"
+                    id="retroceder"
+                    ><img
+                      src="images/atr.png"
+                      alt="atras"
+                      class="img img-fluid hover-btn"
+                    /></button
+                  >
+                </div>
+                <!-- svelte-ignore a11y-click-events-have-key-events -->
+                <div class="col-8 col-lg-3 pe-2 ps-2 d-flex flex-column h-100">
+                  <div class="d-flex justify-content-center">
+                    <span class="text-color text-center" id="preguntas"> </span>
+                  </div>
+                  <div class=" d-flex justify-content-between progreso">
+                    <button
+                      type="button"
+                      class="btn d-flex justify-content-center"
+                      data-bs-toggle="modal"
+                      data-bs-target="#transporteModal"
+                    >
+                      <img
+                        src="images/transporteicon.png"
+                        alt="transporteicon"
+                        class="icons img img-fluid"
+                        id="btnTransporte"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      class="btn d-flex justify-content-center"
+                      data-bs-toggle="modal"
+                      data-bs-target="#hogarModal"
+                    >
+                      <img
+                        src="images/hogaricon.png"
+                        alt="hogaricon"
+                        class="icons img img-fluid"
+                        id="btnHogar"
+                      />
+                    </button>
+                    <button
+                      type="button"
+                      class="btn d-flex justify-content-center"
+                      data-bs-toggle="modal"
+                      data-bs-target="#vidaModal"
+                    >
+                      <img
+                        src="images/vidaicon.png"
+                        alt="vidaicon"
+                        class="icons img img-fluid"
+                        id="btnVida"
+                      />
+                    </button>
+                  </div>
+                  <div id="progressBar" class="barrita"></div>
+                </div>
+                <div class="col-2 d-flex justify-content-center ps-0">
+                  <button
+                    type="button"
+                    alt="sig"
+                    class="btn btn-outline-primary"
+                    onclick="avanzar()"
+                    disabled
+                    id="avance"
+                    ><img
+                      src="images/next.png"
+                      alt="adelante"
+                      class="img img-fluid hover-btn"
+                      id="imgAvance"
+                    /></button
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- MOSTRAR PANTALLA RESULTADOS -->
+        <div class="row justify-content-center h-100" id="pantallaResultados">
+          <audio src="sounds/medio.mp3" id="resultadoAudio"></audio>
+          <div class="col-12 d-flex flex-column justify-content-center h-100">
+            <div class="huellita" bind:this={imageContainer2}>
+              <img
+                src="images/imagen1.png"
+                alt="loopLogo"
+                class="img-fluid"
+                style="display:none;"
+              />
+              <img
+                src="images/imagen2.png"
+                alt="loopLogo"
+                class="img-fluid"
+                style="display:none;"
+              />
+              <img
+                src="images/imagen3.png"
+                alt="loopLogo"
+                class="img-fluid"
+                style="display:none;"
+              />
+            </div>
+            <div class="row justify-content-center align-items-center mt-2">
+              <div class="col-10 d-flex flex-column align-content-center">
+                <span class="text-white fs-1 text-center resaltar" id="co2Total"
+                ></span>
+              </div>
+            </div>
+            <div class="row justify-content-center justify-content-center">
+              <div class="col-3 d-flex flex-column align-items-center">
+                <button
+                  type="button"
+                  class="btn d-flex justify-content-center"
+                  data-bs-toggle="modal"
+                  data-bs-target="#transporteConsejos"
+                >
+                  <img
+                    src="images/transporteicon.png"
+                    alt="transporteicon"
+                    class="icons img img-fluid"
+                    id="btnTransporte"
+                  />
+                </button>
+                <span class="text-white text-center fs-5">Transporte</span>
+                <span class="text-white text-center fs-2" id="co2TransporteFinal"
+                ></span>
+                <span class="text-white text-center textoChico">Kg/co2</span>
+              </div>
+              <div class="col-3 d-flex flex-column align-items-center">
+                <button
+                  type="button"
+                  class="btn d-flex justify-content-center"
+                  data-bs-toggle="modal"
+                  data-bs-target="#hogarConsejos"
+                >
+                  <img
+                    src="images/hogaricon.png"
+                    alt="hogaricon"
+                    class="icons img img-fluid"
+                    id="btnHogar"
+                  />
+                </button>
+      
+                <span class="text-white text-center fs-5">Hogar</span>
+                <span class="text-white fs-2" id="co2HogarFinal"></span>
+                <span class="text-white text-center textoChico">Kg/co2</span>
+              </div>
+              <div class="col-3 d-flex flex-column align-items-center">
+                <button
+                  type="button"
+                  class="btn d-flex justify-content-center"
+                  data-bs-toggle="modal"
+                  data-bs-target="#vidaConsejos"
+                >
+                  <img
+                    src="images/vidaicon.png"
+                    alt="vidaicon"
+                    class="icons img img-fluid"
+                    id="btnVida"
+                  />
+                </button>
+                <span class="text-white text-center fs-5">Hábitos</span>
+                <span class="text-white fs-2" id="co2VidaFinal"></span>
+                <span class="text-white text-center textoChico">Kg/co2</span>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <span class="text-white text-center fs-3" id="categoriaResult"
+                >CATEGORÍA:</span
+              >
+            </div>
+            <div class="row justify-content-center align-items-center mt-2">
+              <div class="col-11 text-center">
+                <span class="text-white text-center textoChico" id="descripcionCate"
+                ></span>
+              </div>
+            </div>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-10 d-flex justify-content-center">
+                <a
+                  href="https://ambiente.neuquen.gov.ar/"
+                  class="btn btn-success"
+                  target="_blank"
+                  id="btnLinks">Conocé Más</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="modal fade"
+            id="transporteConsejos"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body" id="consejoTransporte">
+                  Para reducir tu huella de carbono en el transporte, considera
+                  opciones más sostenibles. Opta por medios de transporte como la
+                  bicicleta, el transporte público o vehículos eléctricos. Compartir
+                  coche y conducir de manera eficiente también ayuda.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="modal fade"
+            id="hogarConsejos"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body" id="consejoHogar">
+                  Para reducir tu huella de carbono en el hogar, considera opciones
+                  más sostenibles. Ajusta el termostato para ahorrar energía, reduce
+                  el plástico en tu día a día. Además, opta por electrodomésticos
+                  eficientes y practica la economía circular: reduce, reutiliza y
+                  recicla.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="modal fade"
+            id="vidaConsejos"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body" id="consejoVida">
+                  Para reducir tu huella de carbono, consume productos locales y de
+                  temporada. Practica la economía circular: reduce, reutiliza y
+                  recicla. Cada pequeña acción cuenta para cuidar nuestro planeta.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer id="inferior" class="">
+        <!-- MOSTRAR LOGOS PROVINCIA -->
+        <div id="provincia" class="row align-items-center">
+            <div class="col-4 pe-4 ps-4 d-flex justify-content-center"><img src="images/secretaria.png"
+                    alt="secretaria" class="img-fluid"></div>
+            <div class="col-4 pe-4 ps-4 d-flex justify-content-center"><img src="images/neuquen.png" alt="neuquen"
+                    class="img-fluid"></div>
+            <div class="col-4 pe-4 ps-4 d-flex justify-content-center"><img src="images/gobierno.png" alt="escudo"
+                    class="img-fluid"></div>
+        </div>
+      </footer>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+      <script src="main.js"></script>
+</body>
+</html>

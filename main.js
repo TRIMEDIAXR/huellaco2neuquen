@@ -1593,7 +1593,7 @@ function calcularHuella() {
         categoriaResultado.innerHTML = categorias_u[0];
         descripcionCate.innerHTML = descripcion[0];
         const altolink = (document.getElementById("resultadoAudio").src =
-            "snd/alto.mp3");
+            "sounds/alto.mp3");
         const altolinkaudio = document.getElementById("resultadoAudio").play();
         textoTransporte.innerHTML =
             "Continuar utilizando medios de transporte de bajo impacto como bicicletas, caminar, o vehículos eléctricos. Considera compartir estos hábitos con amigos o familiares para inspirar cambios positivos en su entorno.";
@@ -1608,7 +1608,7 @@ function calcularHuella() {
         categoriaResultado.innerHTML = categorias_u[1];
         descripcionCate.innerHTML = descripcion[1];
         const mediolink = (document.getElementById("resultadoAudio").src =
-            "snd/medio.mp3");
+            "sounds/medio.mp3");
         const mediolinkaudio = document.getElementById("resultadoAudio").play();
         textoTransporte.innerHTML =
             "Si utilizas un coche híbrido o transporte público, podrías reducir el uso del coche en favor de medios más sostenibles como la bicicleta o caminar. Evalúa la posibilidad de unirte a un sistema de carpooling.";
@@ -1623,7 +1623,7 @@ function calcularHuella() {
         categoriaResultado.innerHTML = categorias_u[2];
         descripcionCate.innerHTML = descripcion[2];
         const bajolink = (document.getElementById("resultadoAudio").src =
-            "snd/bajo.mp3");
+            "sounds/bajo.mp3");
         const bajolinkaudio = document.getElementById("resultadoAudio").play();
         textoTransporte.innerHTML =
             "Si dependes mucho del coche de gasolina o diésel, podrías cambiar a un vehículo más eficiente o comenzar a usar transporte público. Reducir la cantidad de vuelos también puede tener un gran impacto.";
@@ -1658,9 +1658,10 @@ function mostrarResultados() {
     ).style.display = "flex");
     const fondoresultados = (document.body.style.backgroundImage =
         "url(images/resultado.jpg)");
+
     //////////////GUARDAR BASE DE DATOS USUARIO EN ESTE PUNTO///////////////
 
-    HUELLAS.create(usuario);
+    //HUELLAS.create(usuario);
 }
 
 //TECLAS DE CONTROL AVANCE Y RETROCESO

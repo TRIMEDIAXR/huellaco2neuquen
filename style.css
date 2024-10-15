@@ -174,7 +174,8 @@ body {
 }
 
 .over {
-    object-fit:contain;
+
+
     transition: all 1s;
 }
 
